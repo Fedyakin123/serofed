@@ -1,0 +1,109 @@
+#menu ul {
+    list-style: none;
+    width: 92%;
+    margin-left: 4%;
+    margin-right: 4%;
+    -webkit-padding-start: 0px;
+    -moz-padding-start: 0px;
+}
+.upper_partiton {
+    margin: 0 auto 1em auto;
+    display: block;
+    text-transform: uppercase;
+    font-size: 1.3em;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 0.6em;
+    color: rgb(77, 118, 255);
+    -webkit-transition: all 0.5s ease;
+}
+#menu ul li.upper {
+    min-height: 250px;
+}
+#litra {
+    min-height: 300px ;
+}
+#menu li:hover a.upper_partiton,
+#menu li a.upper_partiton:hover {
+    background: rgb(77, 118, 255);
+    color: #fff;
+    box-shadow: 0 0 5px rgb(77, 118, 255);
+}
+#vnav {
+    width:600px;
+    float: left;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-size: 1.1em;
+}
+#vnav li {
+    width:94%;
+    clear: both;
+    height: 2em;
+    padding-left: 3%;
+    padding-right: 3%;
+    margin-top: 0;
+}
+#vnav li a {
+    border-radius: 0.65em;
+    width: 100%;
+    float: left;
+    display: block;
+    padding: 2px;
+    text-decoration: none;
+    color: rgb(63, 138, 229);
+    text-transform: uppercase;
+    -webkit-transition: all 0.3s ease;
+}
+#vnav li:hover a,
+#vnav li a:hover {
+    background: rgb(63, 138, 229);
+    color: #fff;
+}
+#vnav ul {
+    -webkit-transition: height 0.7s ease-in-out, opacity 0.3s ease-out;
+    opacity: 0;
+    list-style: none;
+    float: left;
+    width: 80%;
+    margin: 0 auto;
+    padding: 4px 10%;
+    overflow: hidden;
+    height: 0;
+}
+#vnav li:hover ul {
+    display: block;
+    opacity: 1;
+}
+#vnav li:hover ul.height15 {
+    height: 1em;
+}
+#vnav li:hover ul.height25 {
+    height: 2em;
+}
+#vnav li:hover ul.height35 {
+    height: 3.5em;
+}
+
+
+#vnav ul li {
+    margin: 0;
+    padding: 0;
+    width: auto;
+    height: auto;
+}
+#vnav li:hover ul li a,
+#vnav ul li a {
+    display: inline;
+    padding: 0 6px 0 0;
+    float: none;
+    text-transform: lowercase;
+    color: rgb(63, 138, 229);
+    background: none;
+}
+#vnav li:hover ul li a:hover,
+#vnav ul li a:hover {
+    background: none;
+    color: rgb(23, 30, 163);
+}
