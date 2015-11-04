@@ -2,24 +2,26 @@
 
 require_once(ROOT_DIR . 'controllers' . DS . 'error_controller.php');
 require_once(ROOT_DIR . 'controllers' . DS . 'common_controller.php');
+
 $notfound = new error_controller; // Не запихнуть ли это в общий контроллер?
 $common_controller = new common_controller();
 
 if(isset($_GET['route'])) {
     $array = explode('/', trim($_GET['route'], '/')); //режем строку ГЕТ,отбрасываем слэши
-   switch ($array[0]){
-       case 'logout':
-           $common_controller->log_out();
-           break;
-       case 'cabinet':
-           $controller_name = 'cabinet_controller';
-          if (!$_COOKIE['auth']) $notfound->not_user();
-           break;
-       default:
-           $controller_name = $array[0] . '_controller';
-           break;
-   }
-} else {
+    switch ($array[0]) {
+        case 'logout':
+            $controller_name = 'default_controller';
+            $common_controller->log_out();
+            break;
+        case 'cabinet':
+            $controller_name = 'cabinet_controller';
+            if (!$_COOKIE['auth']) $notfound->not_user();
+            break;
+        default:
+            $controller_name = $array[0] . '_controller';
+            break;
+    }
+}else {
     $controller_name = 'default_controller';
 }
 

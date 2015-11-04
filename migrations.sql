@@ -55,3 +55,10 @@ INSERT INTO `serofed`.`categories` (`id`, `category_name`, `parent`, `section`, 
 INSERT INTO `serofed`.`categories` (`id`, `category_name`, `parent`, `section`, `position`) VALUES ('35', 'Математика', '0', '3', '35');
 INSERT INTO `serofed`.`categories` (`id`, `category_name`, `parent`, `section`, `position`) VALUES ('36', 'Публикации', '35', '3', '36');
 INSERT INTO `serofed`.`categories` (`id`, `category_name`, `parent`, `section`, `position`) VALUES ('37', 'Разное', '0', '3', '37');
+
+UPDATE `serofed`.`categories` SET `category_name`='Рахманинов и его эпоха' WHERE `id`='1';
+UPDATE `serofed`.`categories` SET `category_name`='Отзывы современников' WHERE `id`='2';
+UPDATE `serofed`.`categories` SET `category_name`='Хроника жизни и творчества' WHERE `id`='3';
+UPDATE `serofed`.`categories` SET `category_name`='Музыкальная жизнь русского зарубежья' WHERE `id`='4';
+UPDATE `serofed`.`categories` SET `category_name`='Работы Федякина Романа Васильевича' WHERE `id`='33';
+

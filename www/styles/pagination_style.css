@@ -1,0 +1,27 @@
+/*PAGINATOR*/
+
+#paginator {
+    margin: 1em 0 1em 25%;
+    font-weight: bold;
+}
+#paginator a {
+    font-size: 1.2em;
+    text-decoration: none;
+    padding: 0.2em 0.3em 0.2em 0.3em;
+    margin: 0 0.2em 0 0.2em;
+}
+.page {
+    border-radius: 0.2em;
+    font-family: helvetica,arial,sans-serif;
+    background-color: #b5b5b5;
+    color: #606060;
+
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    -o-transition:all 0.5s ease ;
+}
+.page:hover, .active {
+    background-color: rgb(96, 96, 96);
+    color: #b5b5b5;
+}

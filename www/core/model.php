@@ -52,11 +52,28 @@ class model
         return $last_id = $STH->execute($data) ? $this->DBH->lastInsertId() : false;
     }
 
-    public function get_by_field($key,$value)
+    public function update($data, $id)
     {
+        $placeholder='';
+        foreach ($data as $index => $value) {
+            $placeholder .= "$index = :$index,";
+        }
+        $placeholder = trim($placeholder, ',');
+        $STH = $this->DBH->prepare("UPDATE $this->table SET $placeholder WHERE id = $id");
+        $STH->execute($data);
+        return $id = $STH->execute($data) ? $id : false;
+    }
+
+    public function get_by_field($key, $value, $limited = false)
+    {
+        if ($limited){
+            $lim = " LIMIT $limited";
+        } else {
+            $lim = '';
+        }
         $ph = "`$key`";
         $val = ":$key";
-        $STH = $this->DBH->prepare("SELECT * FROM $this->table WHERE $ph = $val");
+        $STH = $this->DBH->prepare("SELECT * FROM $this->table WHERE $ph = $val$lim;");
         $STH->execute(array(
             "$key"=>$value
         ));
@@ -64,8 +81,7 @@ class model
         $res = [];
         while ($row = $STH->fetch()){
             $res[] = $row;
-        }
-        return $res;
+        } return $res;
     }
     public function get_by_fields($array)
     {
@@ -82,6 +98,20 @@ class model
             $res[] = $row;
         }
         return $res;
+    }
+    public function get_by_field_limited($key, $value, $limit)
+    {
+        $ph = "`$key`";
+        $val = ":$key";
+        $STH = $this->DBH->prepare("SELECT * FROM $this->table WHERE $ph = $val LIMIT $limit");// как сделать используя placeholders?
+        $STH->execute(array(
+            "$key" => $value,
+        ));
+        $STH->setFetchMode(PDO::FETCH_ASSOC);
+        $res = [];
+        while ($row = $STH->fetch()) {
+            $res[] = $row;
+        } return $res;
     }
 }
 

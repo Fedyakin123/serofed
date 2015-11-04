@@ -1,0 +1,183 @@
+#cabinet_block {
+    width: 100%;
+    margin-top: 0;
+    margin-bottom: 5.56%;
+    margin-left: 0;
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+.anchor_nav {
+    background: inherit;
+    color: rgb(80, 80, 80);
+    font-size: 1.3em;
+    text-decoration: none;
+    margin-top: 10%;
+    border-radius: 0.6em;
+    font-weight: bold;
+    font-family:  Times, "Times New Roman", serif;
+    display: block;
+
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition:all 0.5s ease;
+    transition: all 0.5s ease;
+}
+#cabinet_block ul li.cab_ul {
+    min-height: 66px;
+}
+#cabinet_block a.anchor_nav {
+    width: 92%;
+    margin: 0 auto;
+    text-transform: uppercase;
+}
+#cabinet_block ul {
+    list-style: none;
+
+    padding: 0;
+    -webkit-padding-start: 0px;
+    -moz-padding-start: 0px;
+    -webkit-margin-after: 0px;
+    -webkit-margin-before: 0px;
+}
+#cabinet_block ul li ul{
+    margin: 0;
+}
+#cabinet_menu li a {
+    text-transform: uppercase;
+    text-decoration: none;
+    color: rgb(96, 96, 96);
+    font-size: 1.1em;
+}
+#cabinet_menu li {
+    margin-top: 0.8em;
+}
+#cabinet_menu li:hover a {
+    color: rgb(39, 39, 39);
+}
+#cabinet_block a[href$="logout/"] {
+    margin-top: 2em;
+    font-size: 1.1em;
+    font-weight: 100;
+    text-transform: none;
+    width: 30%;
+    height: 1.3em;
+}
+.anchor_nav:hover,
+#cabinet_block li:hover a.anchor_nav {
+    background: rgb(80, 80, 80);
+    color: #c9c9c9;
+    box-shadow: 0 0 5px rgb(80, 80, 80);
+}
+
+/*TABLE*/
+
+table {
+    font-family:  Times, "Times New Roman", serif;
+    font-size: 1.3em;
+    border-spacing: 0;
+    text-align: center;
+    margin: 1.5%;
+    width: 97%;
+}
+th {
+    background: rgba(80, 80, 80, 1);
+    color: #c9c9c9;
+    padding: 10px 20px;
+}
+th, td {
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    border-color: rgb(84, 84, 84);
+}
+td:nth-child(2) {
+    text-align: left;
+}
+th:first-child {
+    border-top-left-radius: 20px;
+}
+th:last-child {
+    border-top-right-radius: 20px;
+    border-right: none;
+    width:60px;
+}
+td {
+    padding: 5px 10px;
+    background: rgb(184, 184, 184);
+}
+tr:last-child td:first-child {
+    border-radius: 0 0 0 26px;
+}
+tr:last-child td:last-child {
+    border-radius: 0 0 26px 0;
+}
+tr td:last-child {
+    border-right: none;
+}
+
+/*FORM*/
+/*BUTTON*/
+
+.button {
+
+    outline: none;
+    text-align: center;
+    font: 1.3em/100% Times, "Times New Roman", serif;;
+    padding: .5em 2em .55em;
+    -webkit-border-radius: .5em;
+    -moz-border-radius: .5em;
+    border-radius: .5em;
+}
+.button_style:hover {
+    text-decoration: none;
+}
+.button:active {
+    position: relative;
+    top: 1px;
+}
+
+.gray {
+    color: #e9e9e9;
+    border: solid 1px #505050;
+    background: #929292;
+    background: -webkit-gradient(linear, left top, left bottom, from(#b8b8b8), to(#545454));
+    background: -moz-linear-gradient(top, #b8b8b8, #545454);
+    filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#00adee', endColorstr='#0078a5');
+}
+.gray:hover {
+    background: #797979;
+    background: -webkit-gradient(linear, left top, left bottom, from(#afafaf), to(#4b4b4b));
+    background: -moz-linear-gradient(top, #afafaf, #4b4b4b);
+    filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#0095cc', endColorstr='#00678e');
+}
+.gray:active {
+    color: #c9c9c9;
+    background: -webkit-gradient(linear, left top, left bottom, from(#545454), to(#b8b8b8));
+    background: -moz-linear-gradient(top, #545454, #b8b8b8);
+    filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#0078a5', endColorstr='#00adee');
+}
+/*OTHER*/
+
+.article_input {
+    padding: .2em .5em .2em;
+    font-family:  Times, "Times New Roman", serif;
+    font-size: 1.3em;
+    font-weight: 100;
+    border-radius: .5em;
+    outline: none;
+    border: 1px solid #505050;
+}
+.article_input[type="text"] {
+    width: 98%;
+}
+#content form {
+    margin-left: 1.5%;
+    margin-right: 1.5%;
+    margin-top: 1.5%;
+}
+#content form a {
+    float:right;
+    margin-top: 0;
+}
+ .article_input option[value="non_selected"]{
+     display: none;
+ }

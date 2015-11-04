@@ -3,5 +3,5 @@
  */
 $ = jQuery.noConflict();
 $(document).ready(function() {
-    $(".ckeditor").ckeditor();
+    //$(".ckeditor").ckeditor();
 });

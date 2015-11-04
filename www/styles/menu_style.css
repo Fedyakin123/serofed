@@ -1,35 +1,36 @@
+
 #menu ul {
     list-style: none;
     width: 92%;
     margin-left: 4%;
     margin-right: 4%;
-    -webkit-padding-start: 0px;
-    -moz-padding-start: 0px;
+
+    -webkit-padding-start: 0;
+    -moz-padding-start: 0;
+    padding-left: 0;
 }
 .upper_partiton {
-    margin: 0 auto 1em auto;
+    margin: 0.5em auto 0.5em auto;
     display: block;
     text-transform: uppercase;
     font-size: 1.3em;
     font-weight: bold;
     text-decoration: none;
     border-radius: 0.6em;
-    color: rgb(77, 118, 255);
+    color: rgb(80, 80, 80);
+
     -webkit-transition: all 0.5s ease;
-}
-#menu ul li.upper {
-    min-height: 250px;
-}
-#litra {
-    min-height: 300px ;
+    -moz-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    -o-transition:all 0.5s ease;
 }
 #menu li:hover a.upper_partiton,
-#menu li a.upper_partiton:hover {
-    background: rgb(77, 118, 255);
-    color: #fff;
-    box-shadow: 0 0 5px rgb(77, 118, 255);
+#menu a.upper_partiton:hover {
+    background: rgb(80, 80, 80);
+    color: #c9c9c9;
+    box-shadow: 0 0 5px rgb(80, 80, 80);
 }
-#vnav {
+.vnav {
     width:600px;
     float: left;
     list-style: none;
@@ -37,7 +38,7 @@
     padding: 0;
     font-size: 1.1em;
 }
-#vnav li {
+.vnav li {
     width:94%;
     clear: both;
     height: 2em;
@@ -45,24 +46,32 @@
     padding-right: 3%;
     margin-top: 0;
 }
-#vnav li a {
+.vnav li a {
     border-radius: 0.65em;
     width: 100%;
     float: left;
     display: block;
     padding: 2px;
     text-decoration: none;
-    color: rgb(63, 138, 229);
+    color: rgb(128, 128, 128);
     text-transform: uppercase;
+
     -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    -o-transition:all 0.3s ease ;
 }
-#vnav li:hover a,
-#vnav li a:hover {
-    background: rgb(63, 138, 229);
-    color: #fff;
+.vnav li:hover a,
+.vnav li a:hover {
+    background: rgb(128, 128, 128);
+    color: #c9c9c9;
 }
-#vnav ul {
+.vnav ul {
     -webkit-transition: height 0.7s ease-in-out, opacity 0.3s ease-out;
+    -moz-transition: height 0.7s ease-in-out, opacity 0.3s ease-out;
+    transition: height 0.7s ease-in-out, opacity 0.3s ease-out;
+    -o-transition: height 0.7s ease-in-out, opacity 0.3s ease-out;
+
     opacity: 0;
     list-style: none;
     float: left;
@@ -71,39 +80,58 @@
     padding: 4px 10%;
     overflow: hidden;
     height: 0;
+
 }
-#vnav li:hover ul {
-    display: block;
+.vnav li:hover ul {
     opacity: 1;
 }
-#vnav li:hover ul.height15 {
+.vnav li:hover ul.height1 {
     height: 1em;
 }
-#vnav li:hover ul.height25 {
+.vnav li:hover ul.height2 {
     height: 2em;
 }
-#vnav li:hover ul.height35 {
-    height: 3.5em;
+.vnav li:hover ul.height3 {
+    height: 3em;
 }
-
-
-#vnav ul li {
+.vnav li:hover ul.height4 {
+    height: 4em;
+}
+.vnav li:hover ul.height5 {
+    height: 5em;
+}
+.vnav li:hover ul.height6 {
+    height: 6em;
+}
+.vnav li:hover ul.height7 {
+    height: 7em;
+}
+.vnav li:hover ul.height8 {
+    height: 8em;
+ }
+.vnav li:hover ul.height9 {
+    height: 9em;
+}
+.vnav ul li {
     margin: 0;
     padding: 0;
     width: auto;
     height: auto;
 }
-#vnav li:hover ul li a,
-#vnav ul li a {
+.vnav li:hover ul li a,
+.vnav ul li a {
     display: inline;
     padding: 0 6px 0 0;
     float: none;
     text-transform: lowercase;
-    color: rgb(63, 138, 229);
+    color: rgb(128, 128, 128);
     background: none;
+    margin-bottom: 3em;
 }
-#vnav li:hover ul li a:hover,
-#vnav ul li a:hover {
-    background: none;
-    color: rgb(23, 30, 163);
+.vnav li:hover ul li a:hover,
+.vnav ul li a:hover {
+    color: rgb(80, 80, 80);
+}
+.invisible {
+    visibility: hidden;
 }

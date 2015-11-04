@@ -10,12 +10,11 @@ class common_controller extends controller
 {
     public function __construct()
     {
-
         if (isset($_POST['login_btn'])) {
             if ($_POST['user']['login'] == BOSS_LOGIN && md5($_POST['user']['password']) == BOSS_PASSWORD) {
                 $_SESSION['auth'] = true;
                 setcookie('auth', true, time() + 3600*24*90, '/');
-                header('location:'. SITE_DIR); //Как перенаправить страницу на саму себя?
+                header('location:'. SITE_DIR . ltrim($_SERVER['REQUEST_URI'], '/')); //Оптимально ли перенаправил?
             }
         }
 
@@ -28,10 +27,12 @@ class common_controller extends controller
             move_uploaded_file($_FILES['upload']['tmp_name'], $path . $_FILES['upload']['name']);
         }
     }
+
     public function log_out()
     {
         setcookie('auth', true, time() - 3600*24*90, '/');
         $_SESSION['auth'] = false;
-        header('location:'. SITE_DIR);
+        echo '<script> javascript:history.back() </script>';
     }
+
 }

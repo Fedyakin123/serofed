@@ -7,9 +7,10 @@
  */
 class cabinet_controller extends controller
 {
+
     public function default_action()
     {
-        $this->view('cabinet/cabinet_page');
+        $this->view('cabinet/article');
     }
     public function article()
     {
@@ -19,9 +20,13 @@ class cabinet_controller extends controller
         if (isset($_POST['article_btn'])) {
             $fields = $_POST['article'];
             $fields['create_date'] = date('Y-m-d H:i:s');
-            $articles_model->insert($fields);
-            header('Location: ' . SITE_DIR . 'cabinet/article/');
-
+            if (isset($_GET['id'])) {
+                $articles_model->update($fields, $_GET['id']);
+                header('Location: ' . SITE_DIR . 'cabinet/article_list/');
+            } else {
+                $articles_model->insert($fields);
+                header('Location: ' . SITE_DIR . 'cabinet/article/');
+            }
         }
         $categories = $categories_model->get_categories();
         $this->render('categories', $categories);
@@ -39,14 +44,22 @@ class cabinet_controller extends controller
             }
         }
     }
-    public function edit_article()
-    {   require_once(ROOT_DIR . 'models' . DS . 'articles_model.php');
-        $model = new articles_model();
-        $article_list = $model->get_all();
-        $this->render('article_list', $article_list);
-        $this->view('cabinet' . DS . 'edit_article');
-        if (isset($_POST['delete_article_btn'])) {
-            $model->delete_article('id',$value);
+    public function article_list()
+    {
+        require_once(ROOT_DIR . 'models' . DS . 'categories_model.php');
+        require_once(ROOT_DIR . 'models' . DS . 'articles_model.php');
+
+        $categories_model = new categories_model();
+        $categories = $categories_model->get_categories();
+        $this->render('categories', $categories);
+
+        $articles_model = new articles_model();
+        $article_list = ((isset($_GET['category_id']))&&($_GET['category_id'] != 'all')) ? $articles_model->get_by_field('category_id', $_GET['category_id']) : $articles_model->get_all();
+        rsort($article_list); //Добавить выбор типа сортировки с помощью js
+        foreach ($article_list as $index=>$value) {
+              $article_list[$index]['category_name'] = $categories_model->get_categories($article_list[$index]['category_id']);
         }
+        $this->render('article_list', $article_list);
+        $this->view('cabinet' . DS . 'article_list');
     }
 }
