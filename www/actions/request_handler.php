@@ -13,8 +13,8 @@ require_once( $_SERVER['DOCUMENT_ROOT'] . DIRECTORY_SEPARATOR . 'core' . DIRECTO
 require_once( $_SERVER['DOCUMENT_ROOT'] . DIRECTORY_SEPARATOR . 'models' . DIRECTORY_SEPARATOR . 'articles_model.php');
 require_once( $_SERVER['DOCUMENT_ROOT'] . DIRECTORY_SEPARATOR . 'models' . DIRECTORY_SEPARATOR . 'categories_model.php');
 
-define('DB_USER', 'root');
-define('DB_PASSWORD', '');
+define('DB_USER', 'serofed');
+define('DB_PASSWORD', '21091954');
 define('DB_HOST', 'localhost');
 define('DB_NAME', 'serofed');
 

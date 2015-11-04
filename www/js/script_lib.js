@@ -57,14 +57,14 @@ function choose_category_js()
 {
     var sel = document.getElementById('categories');
     var val = sel.options[sel.selectedIndex].value;
-    location.href='http://blabla.ru/cabinet/article_list?category_id='+val;
+    location.href='http://serofed.ru/cabinet/article_list?category_id='+val;
 }
 
 function edit_article_js(arg)
 {
     var tr = arg.parentNode;
     var art_id = tr.getElementsByTagName("td")[0].innerText;
-    location.href = 'http://blabla.ru/cabinet/article?id=' + art_id;
+    location.href = 'http://serofed.ru/cabinet/article?id=' + art_id;
 }
 function validate_article_js()
 {
