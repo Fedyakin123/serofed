@@ -167,7 +167,12 @@ tr td:last-child {
     border: 1px solid #505050;
 }
 .article_input[type="text"] {
-    width: 98%;
+    width: 91%;
+}
+.article_input[name="article[article_year]"] {
+    width: 4%;
+    float: right;
+    text-align: center;
 }
 #content form {
     margin-left: 1.5%;

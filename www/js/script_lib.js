@@ -32,7 +32,7 @@ function delete_article_js(arg)
 {
     var confirmed = confirm('Вы точно хотите удалить эту статью?');
     var tr = arg.parentNode;
-    var art_id = tr.getElementsByTagName("td")[0].innerText;
+    var art_id = tr.getElementsByTagName("td")[0].innerHTML;
     var request = new ajaxRequest();
     var params = 'art_id=' + art_id;
 
@@ -45,6 +45,7 @@ function delete_article_js(arg)
         if (request.readyState == 4) {
             if (request.status == 200) {
                 location.reload();
+                //как сделать чтобы перезагружалась только табличка?
             } else alert("Error 2" + this.statusText);
         }
     }
@@ -57,14 +58,8 @@ function choose_category_js()
 {
     var sel = document.getElementById('categories');
     var val = sel.options[sel.selectedIndex].value;
-    location.href='http://serofed.ru/cabinet/article_list?category_id='+val;
-}
+    location.href='/cabinet/article_list?category_id='+val;
 
-function edit_article_js(arg)
-{
-    var tr = arg.parentNode;
-    var art_id = tr.getElementsByTagName("td")[0].innerText;
-    location.href = 'http://serofed.ru/cabinet/article?id=' + art_id;
 }
 function validate_article_js()
 {

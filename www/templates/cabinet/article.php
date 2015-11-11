@@ -28,6 +28,7 @@ if (isset($_GET['id'])) {
     <br /><br />
 
     <input class="article_input" value="<?php echo $article['article_name']; ?>" type="text" name="article[article_name]" placeholder="Заголовок статьи"  id="art_header"/>
+    <input class="article_input" value="<?php if($article['article_year']){ echo $article['article_year']; } ?>" type="text" name="article[article_year]" placeholder="Год" maxlength="4">
 
     <br /><br />
 

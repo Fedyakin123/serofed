@@ -12,6 +12,8 @@
     <script type="text/javascript" src="<?php echo SITE_DIR; ?>js/libs/ckeditor/ckeditor.js"></script>
     <script type="text/javascript" src="<?php echo SITE_DIR; ?>js/script.js"></script>
     <script type="text/javascript" src="<?php echo SITE_DIR; ?>js/script_lib.js"></script>
+    <script type="text/javascript" src="<?php echo SITE_DIR; ?>js/select_image.js"></script>
+
     <title>Архив Сегрея Федякина</title>
     <script type="text/javascript">
         var id_menu = new Array('music','litra','nauka');
@@ -42,7 +44,7 @@
 
     <div id="header" class="block">
         <div id="logo">
-            <img src="<?php echo SITE_DIR; ?>img/gears.png" width="184px" height="125px">
+            <img src="<?php echo SITE_DIR; ?>img/gears.png" width="184px" height="125px" >
         </div>
         <div id="title">
             Архив Сергея Федякина

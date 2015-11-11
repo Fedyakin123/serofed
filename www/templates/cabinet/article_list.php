@@ -23,6 +23,9 @@
             Название статьи
         </th>
         <th>
+            Год
+        </th>
+        <th>
             Категория
         </th>
         <th>
@@ -38,7 +41,9 @@
     </thead>
     <tbody>
     <?php
+
         foreach ($article_list as $sub_arr) {
+            $sub_arr['article_year'] = ($sub_arr['article_year']) ? $sub_arr['article_year'] : 'Не&nbspуказан';
             echo '<tr>
                       <td>
                          ' . $sub_arr['id'] . '
@@ -46,14 +51,19 @@
                       <td>
                          ' . $sub_arr['article_name'] . '
                       </td>
+                      <td>
+                         ' . $sub_arr['article_year'] . '
+                      </td>
                        <td>
                         ' . $sub_arr['category_name'] . '
                       </td>
                       <td>
                          ' . substr($sub_arr['create_date'],0,10) . '
                       </td>
-                      <td onclick="edit_article_js(this)">
-                          <img heigth="64" width="64" src="' . SITE_DIR . 'img/edit.png">
+                      <td>
+                          <a href="' . SITE_DIR . 'cabinet/article?id=' . $sub_arr['id'] . '">
+                              <img heigth="64" width="64" src="' . SITE_DIR . 'img/edit.png">
+                          </a>
                       </td>
                       <td onclick="delete_article_js(this)">
                           <img heigth="64" width="64" src="' . SITE_DIR . 'img/delete.png">

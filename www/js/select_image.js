@@ -12,3 +12,4 @@ function getUrlParam(paramName)
 
     return (match && match.length > 1) ? match[1] : '' ;
 }
+//кажется это ненужный файл

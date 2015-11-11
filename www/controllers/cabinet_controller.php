@@ -33,13 +33,30 @@ class cabinet_controller extends controller
         $this->view('cabinet' . DS . 'article');
     }
 
-    public function browse_image()
+    public function browse_image() //¬Œ“ “”“ œŒ Œ¬€–ﬂ“‹ » —ƒ≈À¿“‹  –¿—»¬Œ
     {
         $path = ROOT_DIR . 'img' . DS . 'uploads' . DS;
         if($dir = opendir($path)) {
+            echo"<script>
+                    function getUrlParam(paramName)
+                    {
+                        var reParam = new RegExp('(?:[\?&]|&amp;)' + paramName + '=([^&]+)', 'i') ;
+                        var match = window.location.search.match(reParam) ;
+
+                        return (match && match.length > 1) ? match[1] : '' ;
+                    }
+                    function select_file(ths)
+                    {
+                        var url = ths.src;
+                        var num = getUrlParam('CKEditorFuncNum');
+                        window.opener.CKEDITOR.tools.callFunction(num, url);
+                        self.close();
+
+                    }
+                </script>";
             while($file = readdir($dir)) {
                 if(is_file($path . DS . $file)) {
-                    echo '<img class="select_image" onclick="select_file()" style="margin: 10px; float: left; max-width: 200px; max-height: 200px;" src="' . SITE_DIR . 'img/uploads/' . $file . '">';
+                    echo '<img class="select_image" onclick="select_file(this)" style="margin: 10px; float: left; max-width: 200px; max-height: 200px;" src="' . SITE_DIR . 'img/uploads/' . $file . '">';
                 }
             }
         }

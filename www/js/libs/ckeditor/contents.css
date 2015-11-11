@@ -89,6 +89,15 @@ img.left
 	padding: 5px;
 }
 
+/*„тоб все картинки были слева по умолчанию*/
+img
+{
+	border: 1px solid #ccc;
+	float: left;
+	margin-right: 15px;
+	padding: 5px;
+}
+
 pre
 {
 	white-space: pre-wrap; /* CSS 2.1 */

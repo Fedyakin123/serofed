@@ -43,6 +43,7 @@ class articles_model extends model
                       art.create_date as create_date,
                       cat.category_name as category_name,
                       art.article_name as article_name,
+                      art.article_year as article_year,
                       art.content as content,
                       cat.parent as parent
                    FROM
