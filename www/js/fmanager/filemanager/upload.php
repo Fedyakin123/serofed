@@ -85,7 +85,7 @@ if ( ! empty($_FILES))
 
 		// upload
 		move_uploaded_file($tempFile,$targetFile);
-		chmod($targetFile, 0755);
+//		chmod($targetFile, 0755);
 
 		if ($is_img)
 		{
