@@ -83,14 +83,19 @@ class model
             $res[] = $row;
         } return $res;
     }
-    public function get_by_fields($array)
+    public function get_by_fields($array, $limited = false)
     {
+        if ($limited){
+            $lim = " LIMIT $limited";
+        } else {
+            $lim = '';
+        }
         $string = '';
         foreach ($array as $index => $value){
             $string .= "$index = :$index AND "; //можно добавить необязательный параметр,чтобы было OR
         }
         $string = trim($string,'AND ');
-        $STH = $this->DBH->prepare("SELECT * FROM $this->table WHERE $string");
+        $STH = $this->DBH->prepare("SELECT * FROM $this->table WHERE $string$lim");
         $STH->execute($array);
         $STH->setFetchMode(PDO::FETCH_ASSOC);
         $res = [];
@@ -99,7 +104,7 @@ class model
         }
         return $res;
     }
-    public function get_by_field_limited($key, $value, $limit)
+    public function get_by_field_limited($key, $value, $limit) //кажется уже не нужна
     {
         $ph = "`$key`";
         $val = ":$key";

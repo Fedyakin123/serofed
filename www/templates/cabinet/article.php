@@ -35,10 +35,13 @@ if (isset($_GET['id'])) {
     <textarea class="ckeditor" name="article[content]" id="article_content" > <?php echo $article['content']?> </textarea>
 
     <br />
+<!--    <input type="hidden" name="MAX_FILE_SIZE" value="5000000" />-->
+<!--    Прикрепить файл: <input name="userfile" type="file" />-->
 
     <input class="button gray" type="submit" value="<?php echo $btn_val; ?>" name="article_btn"  />
 
     <a class="anchor_nav" href="<?php echo SITE_DIR; ?>cabinet/article_list">&nbspК списку статей &rArr; &nbsp </a>
+
 
 </form>
 

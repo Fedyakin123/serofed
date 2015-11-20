@@ -30,7 +30,11 @@ class content_controller extends controller
 
         $model = new articles_model();
         if (isset($_GET['cat']) && isset($_GET['page'])) {
-            $count = count($model->$function_name($column, $_GET['cat']));
+            if (isset($_GET['year'])) {
+                $count = count($model->get_by_fields(array('category_id' => $_GET['cat'], 'article_year' => $_GET['year'] )));
+            } else {
+                $count = count($model->$function_name($column, $_GET['cat']));
+            }
             $count_pages = ceil($count / $num_on_page);
             $full_pages = floor($count / $num_on_page);
 
@@ -44,7 +48,13 @@ class content_controller extends controller
                 $last = (int)$num_on_page * $kfc;
                 $num = ($count - ($num_on_page * $_GET['page'])) + $dobavka;
                 $limit = $num . ',' . $last;
-                $res = $model->$function_name($column, $_GET['cat'], $limit); //лютая хуйня. Либо нужно извлекать весь массив, пересортировывать, и только потом рубить лишнее,что тоже гемор
+                if (isset($_GET['year'])) {
+                    $res = $model->get_by_fields(array('category_id' => $_GET['cat'], 'article_year' => $_GET['year'] ), $limit);
+                    $art_year = '&year=' . $_GET['year'];
+                    $this->render('art_year',$art_year);
+                } else {
+                    $res = $model->$function_name($column, $_GET['cat'], $limit); //лютая хуйня. Либо нужно извлекать весь массив, пересортировывать, и только потом рубить лишнее,что тоже гемор
+                }
                 if ($resort) rsort($res);
                 $this->render('result', $res);
                 $this->render('count', $count_pages);

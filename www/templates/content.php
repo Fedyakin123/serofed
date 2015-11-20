@@ -1,8 +1,9 @@
 
 <?php
     require_once(ROOT_DIR . 'templates' . DS . 'paginator.php');
-    $year = '';
+
     foreach ($result as $value) {
+        $year = '';
         if ($value['article_year']) {
             $year = '&nbsp(' . $value['article_year'] . 'г.)';
         }

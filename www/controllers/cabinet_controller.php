@@ -33,9 +33,9 @@ class cabinet_controller extends controller
         $this->view('cabinet' . DS . 'article');
     }
 
-    public function browse_image() //¬Œ“ “”“ œŒ Œ¬€–ﬂ“‹ » —ƒ≈À¿“‹  –¿—»¬Œ
+    public function browse_image() //–í–û–¢ –¢–£–¢ –ü–û–ö–û–í–´–†–Ø–¢–¨ –ò –°–î–ï–õ–ê–¢–¨ –ö–†–ê–°–ò–í–û
     {
-        $path = ROOT_DIR . 'img' . DS . 'uploads' . DS;
+        $path = ROOT_DIR . 'img' . DS . 'uploaded_images' . DS;
         if($dir = opendir($path)) {
             echo"<script>
                     function getUrlParam(paramName)
@@ -56,7 +56,7 @@ class cabinet_controller extends controller
                 </script>";
             while($file = readdir($dir)) {
                 if(is_file($path . DS . $file)) {
-                    echo '<img class="select_image" onclick="select_file(this)" style="margin: 10px; float: left; max-width: 200px; max-height: 200px;" src="' . SITE_DIR . 'img/uploads/' . $file . '">';
+                    echo '<img class="select_image" onclick="select_file(this)" style="margin: 10px; float: left; max-width: 200px; max-height: 200px;" src="' . SITE_DIR . 'img/uploaded_images/' . $file . '">';
                 }
             }
         }
@@ -72,11 +72,28 @@ class cabinet_controller extends controller
 
         $articles_model = new articles_model();
         $article_list = ((isset($_GET['category_id']))&&($_GET['category_id'] != 'all')) ? $articles_model->get_by_field('category_id', $_GET['category_id']) : $articles_model->get_all();
-        rsort($article_list); //ƒÓ·‡‚ËÚ¸ ‚˚·Ó ÚËÔ‡ ÒÓÚËÓ‚ÍË Ò ÔÓÏÓ˘¸˛ js
+        rsort($article_list); //–î–æ–±–∞–≤–∏—Ç—å –≤—ã–±–æ—Ä —Ç–∏–ø–∞ —Å–æ—Ä—Ç–∏—Ä–æ–≤–∫–∏ —Å –ø–æ–º–æ—â—å—é js
         foreach ($article_list as $index=>$value) {
               $article_list[$index]['category_name'] = $categories_model->get_categories($article_list[$index]['category_id']);
         }
         $this->render('article_list', $article_list);
         $this->view('cabinet' . DS . 'article_list');
+    }
+    public function upload_file()  // –†–∞–∑–æ–±—Ä–∞—Ç—å—Å—è —Å —ç—Ç–æ–π —Ö–µ—Ä–Ω–µ–π.
+    {
+//       $this->view('cabinet/article');
+        $upl_dir = ROOT_DIR . 'uploaded_files' . DS;
+        $upl_filename = $upl_dir . basename($_FILES['userfile']['name']);
+        //echo $upl_filename;
+        echo '<pre>';
+        if (move_uploaded_file($_FILES['userfile']['tmp_name'], $upl_filename)) {
+            echo "–£—Å–ø–µ—à–Ω–æ –∑–∞–≥—Ä—É–∂–µ–Ω–æ \n";
+        } else {
+            echo "–û—à–∏–±–∫–∞ \n";
+        }
+        echo "INFO: \n";
+        print_r($_FILES);
+        echo '</pre>';
+
     }
 }

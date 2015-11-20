@@ -8,7 +8,11 @@ CKEDITOR.editorConfig = function( config ) {
 	// config.language = 'fr';
 	// config.uiColor = '#AADC6E';
 
-    //ƒÀﬂ ¬ Àﬁ◊≈Õ»ﬂ —Œ¡—“¬≈ÕÕ€’ Õ¿–¿¡Œ“Œ  –¿— ŒÃÃ≈Õ“»“‹:
-    config.filebrowserBrowseUrl = 'http://' + document.domain + '/cabinet/browse_image';
-    config.filebrowserUploadUrl = 'http://' + document.domain ;
+
+    //config.filebrowserBrowseUrl = 'http://' + document.domain + '/cabinet/browse_image';
+    //config.filebrowserUploadUrl = 'http://' + document.domain ;
+
+    config.filebrowserBrowseUrl = 'http://' + document.domain + '/js/fmanager/filemanager/dialog.php?type=2&editor=ckeditor&fldr=';
+    config.filebrowserUploadUrl = 'http://' + document.domain + '/js/fmanager/filemanager/dialog.php?type=2&editor=ckeditor&fldr=';
+    config.filebrowserImageBrowseUrl = 'http://' + document.domain + '/js/fmanager/filemanager/dialog.php?type=1&editor=ckeditor&fldr=';
 };
