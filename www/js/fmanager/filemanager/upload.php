@@ -59,6 +59,7 @@ if ( ! empty($_FILES))
 	if (in_array(fix_strtolower($info['extension']), $ext))
 	{
 		$tempFile = $_FILES['file']['tmp_name'];
+		echo'11111111'.$tempFile.'11111111';
 		$targetPath = $storeFolder;
 		$targetPathThumb = $storeFolderThumb;
 		$_FILES['file']['name'] = fix_filename($_FILES['file']['name'],$transliteration,$convert_spaces, $replace_with);
