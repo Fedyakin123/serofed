@@ -41,6 +41,7 @@
 </head>
 <body>
 <div id="container">
+    <? phpinfo();?>
 
     <div id="header" class="block">
         <div id="logo">
