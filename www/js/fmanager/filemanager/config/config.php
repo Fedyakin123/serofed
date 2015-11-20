@@ -66,7 +66,7 @@ $config = array(
 	| with start and final /
 	|
 	*/
-	'upload_dir' => '/uploaded_files/',
+	'upload_dir' => '/js/fmanager/upl_files/',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -76,7 +76,7 @@ $config = array(
 	| with final /
 	|
 	*/
-	'current_path' => '../../../uploaded_files/',
+	'current_path' => '../upl_files/',
 
 	/*
 	|--------------------------------------------------------------------------
