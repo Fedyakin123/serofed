@@ -5,7 +5,7 @@
  * Date: 31.08.2015
  * Time: 0:00
  */
-session_start();
+//session_start();
 header("Content-Type: text/html; charset=utf-8");
 define('DS', DIRECTORY_SEPARATOR);
 define('ROOT_DIR', $_SERVER['DOCUMENT_ROOT'] . DS);
