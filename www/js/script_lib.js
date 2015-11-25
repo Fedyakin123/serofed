@@ -28,11 +28,16 @@ function ajaxRequest()
     return request
 }
 
-function delete_article_js(arg)
+function delete_article_js(arg,article_id)
 {
     var confirmed = confirm('Вы точно хотите удалить эту статью?');
-    var tr = arg.parentNode;
-    var art_id = tr.getElementsByTagName("td")[0].innerHTML;
+    if (article_id == undefined) {
+        var tr = arg.parentNode;
+        var art_id = tr.getElementsByTagName("td")[0].innerHTML;
+    } else {
+        var art_id = article_id;
+    }
+
     var request = new ajaxRequest();
     var params = 'art_id=' + art_id;
 
@@ -48,7 +53,7 @@ function delete_article_js(arg)
                 //как сделать чтобы перезагружалась только табличка?
             } else alert("Error 2" + this.statusText);
         }
-    }
+    };
     if (confirmed) {
         request.send(params);
     }

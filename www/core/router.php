@@ -1,4 +1,5 @@
 <?php
+//ЗАКРЫТЬ ДОСТУП К ФАЙЛОВОМУ МЕНЕДЖЕРУ ПО ПРЯМОЙ ССЫЛКЕ!!!
 
 require_once(ROOT_DIR . 'controllers' . DS . 'error_controller.php');
 require_once(ROOT_DIR . 'controllers' . DS . 'common_controller.php');

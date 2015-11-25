@@ -23,6 +23,11 @@ class cabinet_controller extends controller
             if (isset($_GET['id'])) {
                 $articles_model->update($fields, $_GET['id']);
                 header('Location: ' . SITE_DIR . 'cabinet/article_list/');
+                //сделать,чтоб редиректила обратно,а не к табличкам.
+
+//                echo '<pre>'; запузырить это в функцию-шпаргалку
+//                print_r($_SERVER);
+//                echo '</pre>';
             } else {
                 $articles_model->insert($fields);
                 header('Location: ' . SITE_DIR . 'cabinet/article/');

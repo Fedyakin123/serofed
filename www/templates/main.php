@@ -22,25 +22,29 @@
                     var name = href.match(/\/[^\/]*\.\w{3,4}/);
                     res += '';
                     name += '';
-                    href += '';
                     res = res.slice(1);
-                    name = decodeURI(name);
+//                    name = decodeURI(name); // Не нужно,если не убирать транслитерацию
                     name = name.slice(1);
-//                    alert(href)
                     $(this).before(
-                        '<a style="display:block" href="'+href+'">' +
-                        '<div class ="file_container">' +
-                        '<div class="resize_container">' +
-                            '<img class="file_icon" src="/js/fmanager/filemanager/img/ico/' + res + '.jpg" />' +
-                        '</div><p>' +
-                        name + '</p></div></a>'
+                        //При необходимости - проставить флаг "download" эдементу <a>
+                        '<a target="_blank" title="Открыть файл" href="'+href+'">' +
+                            '<div class ="file_container">' +
+                                '<div class="resize_container">' +
+                                    '<img class="file_icon" src="/js/fmanager/filemanager/img/ico/' + res + '.jpg" />' +
+                                '</div>' +
+                                '<p>' + name + '</p>' +
+                            '</div>' +
+                        '</a>'
                     );
-                    $(this).text('');
-//                    $(this).attr('href');
-//                 alert(res);
+                    $(this).remove();
                 }
             }); // конец each
+
+            <?php if ($auth) require_once(ROOT_DIR . 'js' . DS . 'boss_script.js');?>
+            //ВИДИМО МОЖНО ПРОСТО СЮДА ВСТАВИТЬ БЕЗ ЗАПРОСА ФАЙЛОВ
+
         }); //конец ready
+
     </script>
 
     <title>Архив Сегрея Федякина</title>
@@ -48,9 +52,11 @@
         var id_menu = new Array('music','litra','nauka');
         startList = function allclose() {
             for (i=0; i < id_menu.length; i++){
+                //поменять < на == чтоб подменюшки не сворачивались при выборе другой и наоборот, либо то же самое в openMenu
                 document.getElementById(id_menu[i]).style.display = "none";
+                //Динамически менять логотипы в зависимости от положения курсора
             }
-        }
+        };
         function openMenu(id){
             var parent = document.getElementById(id).parentNode;
             for (i=0; i == id_menu.length; i++){
