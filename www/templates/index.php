@@ -1,1 +1,3 @@
-<img src="http://serofed.ru/img/restricted.png" />
+<?php
+echo '<img  src="' . SITE_DIR . 'img/edit.png"'>
+?>
