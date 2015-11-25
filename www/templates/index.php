@@ -1,1 +1,1 @@
-<img src="serofed/www/img/restricted.png" />
+<img src="http://serofed.ru/img/restricted.png" />
