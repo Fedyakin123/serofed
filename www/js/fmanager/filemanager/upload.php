@@ -85,6 +85,7 @@ if ( ! empty($_FILES))
 
 		// upload
 		move_uploaded_file($tempFile,$targetFile);
+		echo '000'.$tempFile.'000'.$targetFile.'0000';
 		chmod($targetFile, 0755);
 
 		if ($is_img)
