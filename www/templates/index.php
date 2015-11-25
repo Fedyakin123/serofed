@@ -1,1 +1,1 @@
-<img src="<?php echo SITE_DIR ?>img/restricted.png" />
+<img src="/img/restricted.png" />
