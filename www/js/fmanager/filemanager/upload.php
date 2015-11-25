@@ -62,7 +62,7 @@ if ( ! empty($_FILES))
 		$targetPath = $storeFolder;
 		$targetPathThumb = $storeFolderThumb;
 		$_FILES['file']['name'] = fix_filename($_FILES['file']['name'],$transliteration,$convert_spaces, $replace_with);
-
+		echo $tempFile;
 	 	// Gen. new file name if exists
 		if (file_exists($targetPath.$_FILES['file']['name']))
 		{
