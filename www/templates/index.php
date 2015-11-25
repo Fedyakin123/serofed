@@ -1,1 +1,1 @@
-<img src="/img/restricted.png" />
+<img src="serofed/www/img/restricted.png" />
