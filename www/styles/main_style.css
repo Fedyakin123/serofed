@@ -224,3 +224,11 @@ h2 {
     margin-top: 14px;
     margin-left: 70px;
 }
+
+/*ЗАГЛУШКА*/
+.center {
+    height: 470px;
+    width: 400px;
+    margin: auto;
+    position: absolute;
+}
