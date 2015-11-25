@@ -12,4 +12,4 @@ function getUrlParam(paramName)
 
     return (match && match.length > 1) ? match[1] : '' ;
 }
-//кажется это ненужный файл
+//РєР°Р¶РµС‚СЃСЏ РЅРµРЅСѓР¶РЅС‹Р№ С„Р°Р№Р»

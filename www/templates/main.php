@@ -17,14 +17,26 @@
         $(document).ready(function(){
             $('a[href]').each(function(){
                 var href = $(this).text();
-                var res = href.match(/\.\w{3,4}$/i);
+                var res = href.match(/\.\w{3,4}$/);
                 if (res){
+                    var name = href.match(/\/[^\/]*\.\w{3,4}/);
                     res += '';
-                    res = res.slice(1);
-                    var name = href.match(/\/[^\/]*\.\w{3,4}/i);
                     name += '';
-                    $(this).before('<img  width="50px" heigth = "50px"src="/js/fmanager/filemanager/img/ico/'+res+'.jpg" />');
-                    $(this).text(name);
+                    href += '';
+                    res = res.slice(1);
+                    name = decodeURI(name);
+                    name = name.slice(1);
+//                    alert(href)
+                    $(this).before(
+                        '<a style="display:block" href="'+href+'">' +
+                        '<div class ="file_container">' +
+                        '<div class="resize_container">' +
+                            '<img class="file_icon" src="/js/fmanager/filemanager/img/ico/' + res + '.jpg" />' +
+                        '</div><p>' +
+                        name + '</p></div></a>'
+                    );
+                    $(this).text('');
+//                    $(this).attr('href');
 //                 alert(res);
                 }
             }); // конец each

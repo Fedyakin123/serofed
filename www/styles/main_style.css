@@ -68,7 +68,7 @@ h2 {
 }
 #auth form input {
     background-color: rgb(233, 233, 233);
-    /* мешают user agent stylesheet, чтобы оформить автозаполнение*/
+    /* пїЅпїЅпїЅпїЅпїЅпїЅ user agent stylesheet, пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ*/
     font-family: monospace;
     font-size: 1.5em;
     border-radius: 5px;
@@ -193,3 +193,34 @@ h2 {
 }
 
 
+/* JAVASCRIPT */
+
+.resize_container {
+    width: 53px;
+    height: 53px;
+    overflow: hidden;
+    float: left;
+    border-right: 1px solid black;
+
+
+
+}
+.file_icon {
+    margin: -20px 0 0 -23px;
+    width: 100px;
+}
+.file_container {
+    border: 1px solid black;
+    /*border-left: hidden;*/
+    height: 53px;
+    width: 85%;
+    /*padding-top: 14px;*/
+    /*padding-left: 50px;*/
+    font-size: 1.5em;
+    overflow: hidden;
+    background-color: rgb(150, 150, 150);;
+}
+.file_container p {
+    margin-top: 14px;
+    margin-left: 70px;
+}
