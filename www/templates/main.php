@@ -8,11 +8,28 @@
     <link rel="stylesheet" type="text/css" href="<?php echo SITE_DIR; ?>styles/menu_style.css">
     <link rel="stylesheet" type="text/css" href="<?php echo SITE_DIR; ?>styles/cabinet_style.css">
     <link rel="stylesheet" type="text/css" href="<?php echo SITE_DIR; ?>styles/pagination_style.css">
-    <script type="text/javascript" src="<?php echo SITE_DIR; ?>js/libs/jquery-2.1.4.min.js"></script>
     <script type="text/javascript" src="<?php echo SITE_DIR; ?>js/libs/ckeditor/ckeditor.js"></script>
     <script type="text/javascript" src="<?php echo SITE_DIR; ?>js/script.js"></script>
     <script type="text/javascript" src="<?php echo SITE_DIR; ?>js/script_lib.js"></script>
 <!--    <script type="text/javascript" src="--><?php //echo SITE_DIR; ?><!--js/select_image.js"></script>-->
+    <script type="text/javascript" src="<?php echo SITE_DIR; ?>js/libs/jquery-2.1.4.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('a[href]').each(function(){
+                var href = $(this).text();
+                var res = href.match(/\.\w{3,4}$/i);
+                if (res){
+                    res += '';
+                    res = res.slice(1);
+                    var name = href.match(/\/[^\/]*\.\w{3,4}/i);
+                    name += '';
+                    $(this).before('<img  width="50px" heigth = "50px"src="/js/fmanager/filemanager/img/ico/'+res+'.jpg" />');
+                    $(this).text(name);
+//                 alert(res);
+                }
+            }); // конец each
+        }); //конец ready
+    </script>
 
     <title>Архив Сегрея Федякина</title>
     <script type="text/javascript">
