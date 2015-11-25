@@ -3,6 +3,6 @@
 <link rel="stylesheet" type="text/css" href="<?php echo SITE_DIR; ?>serofed/www/styles/main_style.css">
 
 <?php
-echo '<img style="margin: 0 auto; " src="' . SITE_DIR . 'serofed/www/img/restricted.png" />';
+echo '<img class="center" src="' . SITE_DIR . 'serofed/www/img/restricted.png" />';
 //Выровнять по центру эту ебань, придумать другие заглушки
-?> 
+?>
