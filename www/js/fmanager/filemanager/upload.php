@@ -59,7 +59,6 @@ if ( ! empty($_FILES))
 	if (in_array(fix_strtolower($info['extension']), $ext))
 	{
 		$tempFile = $_FILES['file']['tmp_name'];
-//		echo '11111111'.$tempFile.'11111111';
 		$targetPath = $storeFolder;
 		$targetPathThumb = $storeFolderThumb;
 		$_FILES['file']['name'] = fix_filename($_FILES['file']['name'],$transliteration,$convert_spaces, $replace_with);
@@ -86,7 +85,6 @@ if ( ! empty($_FILES))
 
 		// upload
 		move_uploaded_file($tempFile,$targetFile);
-//		echo '0000000'.$targetFile.'00000000';
 		chmod($targetFile, 0755);
 
 		if ($is_img)
