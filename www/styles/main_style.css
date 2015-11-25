@@ -227,12 +227,7 @@ h2 {
 
 /*ЗАГЛУШКА*/
 .center {
-    height: 470px;
-    width: 400px;
     margin: auto;
     position: absolute;
     top: 0; left: 0; bottom: 0; right: 0;
-    background-color: transparent;
-    text-align: center;
-    z-index: 0;
 }
