@@ -1,4 +1,4 @@
-<form>
+<form class="add_article">
     <br />
     <select class="article_input" id="categories" name="article[category_id]" onchange="choose_category_js()">
         <option value="all">Все категории</option>

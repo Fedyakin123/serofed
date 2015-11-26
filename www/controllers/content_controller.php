@@ -50,10 +50,10 @@ class content_controller extends controller
                 $limit = $num . ',' . $last;
                 if (isset($_GET['year'])) {
                     $res = $model->get_by_fields(array('category_id' => $_GET['cat'], 'article_year' => $_GET['year'] ), $limit);
-                    $art_year = '&year=' . $_GET['year'];
+                    $art_year = '&cat='.$_GET['cat'].'&page='.$_GET['page'].'&year=' . $_GET['year'];
                     $this->render('art_year',$art_year);
                 } else {
-                    $res = $model->$function_name($column, $_GET['cat'], $limit); //лютая хуйня. Либо нужно извлекать весь массив, пересортировывать, и только потом рубить лишнее,что тоже гемор
+                    $res = $model->$function_name($column, $_GET['cat'], $limit); //пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ. пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ,пїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
                 }
                 if ($resort) rsort($res);
                 $this->render('result', $res);

@@ -11,7 +11,7 @@ class common_controller extends controller
     public function __construct()
     {
         if (isset($_POST['login_btn'])) {
-            if ($_POST['user']['login'] == BOSS_LOGIN && md5($_POST['user']['password']) == BOSS_PASSWORD) {
+            if ($_POST['user']['login'] == BOSS_LOGIN && md5(SALT . $_POST['user']['password']) == BOSS_PASSWORD) {
                 $_SESSION['auth'] = true;
                 setcookie('auth', true, time() + 3600*24*90, '/');
                 header('location:'. SITE_DIR . ltrim($_SERVER['REQUEST_URI'], '/')); //Оптимально ли перенаправил?

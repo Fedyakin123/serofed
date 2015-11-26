@@ -1,5 +1,20 @@
-<?php
 
+
+<?php
+if (($_GET['page'] == 1 ) && (!$_GET['year'])) {
+    $visibility = "visible";
+} else {
+    $visibility = "hidden";
+}
+ ?>
+    <form style = "visibility: <?php echo $visibility;?>" class="filter" method="get" action="">
+        <input class="hidden" type="text" name="cat" value="<?php echo $_GET['cat']?>">
+        <input class="hidden" type="text" name="page" value="<?php echo $_GET['page']?>">
+        <input  type="text" name="year" maxlength="4" placeholder="Год" required>
+        <input  type="submit" value="Фильтровать">
+    </form>
+
+<?php
 if ($count > 1) {
     $next = $_GET['page'] + 1;
     $after_next = $next + 1;
@@ -67,7 +82,10 @@ if ($count > 1) {
     } else {
         echo "<a href='' class='page' style='visibility: hidden' >>></a>";
     }
+
     echo "</div>";
 }
 
 ?>
+
+            <div style="clear: both"></div>

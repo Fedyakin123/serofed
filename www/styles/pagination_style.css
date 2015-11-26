@@ -1,8 +1,9 @@
 /*PAGINATOR*/
 
 #paginator {
-    margin: 1em 0 1em 25%;
+    margin: 1em 0 0 2%;
     font-weight: bold;
+    float: left;
 }
 #paginator a {
     font-size: 1.2em;
@@ -24,4 +25,24 @@
 .page:hover, .active {
     background-color: rgb(96, 96, 96);
     color: #b5b5b5;
+}
+.hidden {
+    display: none;
+}
+.filter {
+    margin: 0.78em 0 0 2%;
+    float: left;
+    width: 20%;
+}
+.filter input {
+    border: 1px solid #797979;
+    padding: 0.1em 0.3em 0.1em 0.3em;
+    width: auto;
+    font-size: 1.2em;
+    border-radius: 0.2em;
+    font-family: helvetica,arial,sans-serif;
+    background-color: #e9e9e9;
+}
+.filter input[type='text'] {
+    width: 22%
 }

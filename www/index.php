@@ -9,6 +9,7 @@ session_start();
 header("Content-Type: text/html; charset=utf-8");
 define('DS', DIRECTORY_SEPARATOR);
 define('ROOT_DIR', $_SERVER['DOCUMENT_ROOT'] . DS);
+define('SALT', '~~!GSU667Ji9Бвывы!');
 error_reporting(E_ERROR | E_WARNING | E_PARSE);
 require_once(ROOT_DIR . 'config.php');
 require_once(ROOT_DIR . 'core' . DS . 'model.php');

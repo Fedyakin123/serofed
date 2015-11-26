@@ -80,7 +80,7 @@
 
     <div id="header" class="block">
         <div id="logo">
-            <img src="<?php echo SITE_DIR; ?>img/gears.png" width="184px" height="125px" >
+           <a href="<?php echo SITE_DIR;?>"> <img src="<?php echo SITE_DIR; ?>img/gears.png" width="184px" height="125px" > </a>
         </div>
         <div id="title">
             Архив Сергея Федякина
@@ -225,11 +225,11 @@
 
     <div style="clear: both"></div>
 
-    <div id="footer" class="block">
-        <a href="#">Об авторе</a>
-        &nbsp|&nbsp
-        <a href="#">Полезные ссылки</a>
-    </div>
+<!--    <div id="footer" class="block">-->
+<!--        <a href="#">Об авторе</a>-->
+<!--        &nbsp|&nbsp-->
+<!--        <a href="#">Полезные ссылки</a>-->
+<!--    </div>-->
 </div>
 </body>
 </html>
