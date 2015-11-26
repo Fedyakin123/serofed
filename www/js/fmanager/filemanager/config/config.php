@@ -196,7 +196,7 @@ $config = array(
 	// YOU CAN ALSO PASS THIS PARAMETERS USING SESSION VAR => $_SESSION['RF']["VIEW"]=
 	//
 	//******************
-	'default_view'                            => 0,
+	'default_view'                            => 1,
 
 	//set if the filename is truncated when overflow first row
 	'ellipsis_title_after_first_row'          => true,
@@ -281,7 +281,7 @@ $config = array(
 	/*******************
 	 * JAVA upload
 	 *******************/
-	'java_upload'                             => true,
+	'java_upload'                             => false,//ПОКА ОТКЛЮЧУ
 	'JAVAMaxSizeUpload'                       => 200, //Gb
 
 

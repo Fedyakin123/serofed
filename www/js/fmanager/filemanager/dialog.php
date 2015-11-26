@@ -23,9 +23,38 @@ if(isset($_POST['submit'])){
 
 }
 else {
-include 'include/utils.php';
+    //Разобраться с этой авторизацией
+    require_once($_SERVER['DOCUMENT_ROOT'] . '\core\controller.php');
+    $contr = new controller();
+    if ($contr->auth) {
+        include 'include/utils.php';
+    } else {
+        header('location: /templates/index.php');
+    }
 
-if (isset($_GET['fldr'])
+
+    //ОГРАНИЧЕНИЕ РАЗМЕРА ПАПКИ, сделать покрасивее
+    $sum_size = folder_info($current_path)[0];
+    $sum_size_mb = number_format($sum_size / 1024 / 1024, 2, ',', ' ');
+    $sum_size_gb = number_format($sum_size / 1024 / 1024 / 1024, 2, ',', ' ');
+
+    $max_dir_size_gb = 5;
+    $max_dir_size_mb = $max_dir_size_gb * 1024;
+    $max_dir_size = $max_dir_size_gb * 1024 * 1024 * 1024;
+
+    $diff = $max_dir_size - $sum_size;
+    $diff_mb = number_format($diff / 1024 / 1024, 2, ',', ' ');
+    $diff_gb = number_format($diff / 1024 / 1024 / 1024, 2, ',', ' ');
+
+    if ($diff < 0) {
+        $upload_files = false;
+        $message = "Хранилище переполнено. Удалите часть данных! Избыток: $diff_mb MБ";
+    } else {
+        $message = "Занято $sum_size_mb МБ ($sum_size_gb ГБ) из $max_dir_size_mb МБ ($max_dir_size_gb ГБ). Осталось $diff_mb МБ ($diff_gb ГБ)";
+    };
+//КОНЕЦ ОГРАНИЧЕНИЯ РАЗМЕРА
+
+    if (isset($_GET['fldr'])
     && !empty($_GET['fldr'])
     && strpos($_GET['fldr'],'../') === FALSE
     && strpos($_GET['fldr'],'./') === FALSE)
@@ -44,7 +73,7 @@ if($subdir == "")
 //remember last position
 setcookie('last_position',$subdir,time() + (86400 * 7));
 
-if ($subdir == "/") { $subdir = ""; }
+    if ($subdir == "/") { $subdir = ""; }
 
 // If hidden folders are specified
 if(count($hidden_folders)){
@@ -462,6 +491,7 @@ $src = '';
 $files = scandir($current_path.$rfm_subfolder.$subdir);
 $n_files=count($files);
 
+
 //php sorting
 $sorted=array();
 $current_folder=array();
@@ -500,6 +530,7 @@ foreach($files as $k=>$file){
 }
 
 // Should lazy loading be enabled
+
 $lazy_loading_enabled= ($lazy_loading_file_number_threshold == 0 || $lazy_loading_file_number_threshold != -1 && $n_files > $lazy_loading_file_number_threshold) ? true : false;
 
 function filenameSort($x, $y) {
@@ -596,7 +627,7 @@ $files=array_merge(array($prev_folder),array($current_folder),$sorted);
     </div>
 </div>
 
-<!-- header div end -->
+<!--Строка о размере файла--> <div> <?php echo $message ;?></div>
 
     <!-- breadcrumb div start -->
 
@@ -747,6 +778,7 @@ $files=array_merge(array($prev_folder),array($current_folder),$sorted);
 					    <a href="javascript:void('')" class="tip-left erase-button <?php if($delete_folders && !$file_prevent_delete) echo "delete-folder"; ?>" title="<?php echo trans('Erase')?>" data-confirm="<?php echo trans('Confirm_Folder_del'); ?>" data-path="<?php echo $rfm_subfolder.$subdir.$file; ?>" >
 					    <i class="icon-trash <?php if(!$delete_folders || $file_prevent_delete) echo 'icon-white'; ?>"></i>
 					    </a>
+<!--                  //Добавить проверку рарешения загрузки  после удаления файла  -->
 				    </figcaption>
 			<?php } ?>
 			    </figure>

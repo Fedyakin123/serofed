@@ -229,6 +229,11 @@ h2 {
     color: black;
     display: block;
 }
+.article_block_content_full p a[title="Открыть файл"] {
+    text-decoration: none;
+    color: black;
+    display: block;
+}
 
 /*ЗАГЛУШКА*/
 .center {
