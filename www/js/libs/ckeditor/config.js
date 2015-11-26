@@ -71,6 +71,6 @@ CKEDITOR.editorConfig = function( config ) {
 CKEDITOR.on( 'dialogDefinition', function( ev ){
     var dialogName = ev.data.name;
     var dialogDefinition = ev.data.definition;
-    if ( dialogName == 'link' ){dialogDefinition.removeContents( 'advanced' );dialogDefinition.removeContents( 'target' );dialogDefinition.removeContents( 'Upload' );}
+    if ( dialogName == 'link' ){dialogDefinition.removeContents( 'advanced' );dialogDefinition.removeContents( 'target' );dialogDefinition.removeContents( 'upload' );}
     if ( dialogName == 'image' ){dialogDefinition.removeContents( 'advanced' );dialogDefinition.removeContents( 'Link' );dialogDefinition.removeContents( 'Upload' );}
 });

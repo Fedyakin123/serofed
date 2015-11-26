@@ -24,7 +24,7 @@ if(isset($_POST['submit'])){
 }
 else {
     //Разобраться с этой авторизацией
-    require_once($_SERVER['DOCUMENT_ROOT'] . '\core\controller.php');
+    require_once($_SERVER['DOCUMENT_ROOT'] . DIRECTORY_SEPARATOR .'core' . DIRECTORY_SEPARATOR . 'controller.php');
     $contr = new controller();
     if ($contr->auth) {
         include 'include/utils.php';
