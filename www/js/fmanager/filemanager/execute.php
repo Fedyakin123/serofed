@@ -130,7 +130,6 @@ if (isset($_GET['action']))
         case 'create_folder':
             if ($create_folders)
             {
-
                 $name = fix_filename($_POST['name'],$transliteration,$convert_spaces, $replace_with);
                 $path .= $name;
                 $path_thumb .= $name;

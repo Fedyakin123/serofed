@@ -181,6 +181,7 @@ function rename_file($old_path, $name, $transliteration)
 function rename_folder($old_path, $name, $transliteration)
 {
 	$name = fix_filename($name, $transliteration, false, '_', true);
+
 	if (file_exists($old_path))
 	{
 		$new_path = fix_dirname($old_path) . "/" . $name;
@@ -472,22 +473,22 @@ function fix_filename($str, $transliteration, $convert_spaces = false, $replace_
 
 	if ($transliteration)
 	{
-		if (function_exists('transliterator_transliterate'))
-		{
-			 $str = transliterator_transliterate('Accents-Any', utf8_encode($str));
-		}
-		else
-		{
+//		if (function_exists('transliterator_transliterate'))
+//		{
+//			 $str = transliterator_transliterate('Accents-Any', utf8_encode($str));
+//		}
+//		else
+//		{
 //			$str = iconv('UTF-8', 'ASCII//TRANSLIT//IGNORE', $str);
 //			ВСТАВЛЮ СВОЙ ТРАНСЛИТЕРАТОР
 			$str = str2url($str);
 
-		}
+//		}
 
 		$str = preg_replace("/[^a-zA-Z0-9\.\[\]_| -]/", '', $str);
 	}
 
-	$str = str_replace(array( '"', "'", "/", "\\" ), "", $str);
+//	$str = str_replace(array( '"', "'", "/", "\\" ), "", $str);
 	$str = strip_tags($str);
 
 	// Empty or incorrectly transliterated filename.
@@ -499,6 +500,7 @@ function fix_filename($str, $transliteration, $convert_spaces = false, $replace_
 	}
 
 	return trim($str);
+
 }
 
 /**
