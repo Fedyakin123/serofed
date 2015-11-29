@@ -135,3 +135,12 @@
 .invisible {
     visibility: hidden;
 }
+hr {
+    display: block;
+    clear: both;
+}
+/*a.upper_partiton {*/
+    /*display: inline;*/
+    /*margin-bottom: 1em;*/
+    /*width: 100%;*/
+/*}*/
