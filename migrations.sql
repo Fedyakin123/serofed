@@ -63,3 +63,6 @@ UPDATE `serofed`.`categories` SET `category_name`='Музыкальная жиз
 UPDATE `serofed`.`categories` SET `category_name`='Работы Федякина Романа Васильевича' WHERE `id`='33';
 
 ALTER TABLE articles ADD article_year SMALLINT UNSIGNED NOT NULL;
+
+ALTER TABLE articles MODIFY content MEDIUMTEXT NOT NULL;
+INSERT INTO `serofed`.`categories` (`id`, `category_name`, `parent`, `section`, `position`) VALUES ('38', 'Книги', '1', '1', '38');

@@ -109,12 +109,14 @@
                     <a href="<?php echo SITE_DIR; ?>content/view?view_page=placeholder" class="upper_partiton" onclick="openMenu('music');return(false)" > Музыка</a>
                     <ul class="vnav" id="music">
                         <li class=""><a href="<?php echo SITE_DIR; ?>content/show_articles_parent?cat=1&page=1">Рахманинов и его эпоха</a>
-                            <ul  class="height9">
+                            <ul  class="height10">
                                 <li class=""><a href="<?php echo SITE_DIR; ?>content/show_articles?cat=2&page=1">Отзывы современников </a></li>
                                 <hr>
                                 <li class=""><a href="<?php echo SITE_DIR; ?>content/show_articles?cat=3&page=1">Хроника жизни и творчества</a></li>
                                 <hr>
                                 <li class=""><a href="<?php echo SITE_DIR; ?>content/show_articles?cat=4&page=1">Музыкальная жизнь русского зарубежья</a></li>
+                                <hr>
+                                <li class=""><a href="<?php echo SITE_DIR; ?>content/show_articles?cat=38&page=1">Книги</a></li>
                             </ul>
                         </li>
                         <li class=""><a href="<?php echo SITE_DIR; ?>content/show_articles_parent?cat=5&page=1">Скрябин</a>
